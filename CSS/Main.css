@@ -1,0 +1,210 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+/* Show it is fixed to the top */
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    background-color: #b3b3b3;
+  }
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  /* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+ 
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  /* rtl:remove */
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 52em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+
+/* hover over the images */
+
+
+.working-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size,14rem), 1fr));
+  grid-gap: 5%;
+  padding: 1;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 2em);
+}
+
+.group{
+  --flow-space: 2em;
+}
+
+.certs{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 1/1;
+  min-height: 100px;
+  position: relative;
+  padding: 1.5rem;
+  backface-visibility: hidden;
+  text-decoration: none;
+  color: #bd0e0e;
+  overflow: hidden;
+}
+
+.certs::before,
+.certs::after{
+  content: '';
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.certs::before{
+  background: linear-gradient(
+      to top,
+      hsl(0 0% 0% / 0.79) 0%,
+  hsl(0 0% 0% / 0.787) 7.8%,
+  hsl(0 0% 0% / 0.779) 14.4%,
+  hsl(0 0% 0% / 0.765) 20.2%,
+  hsl(0 0% 0% / 0.744) 25.3%,
+  hsl(0 0% 0% / 0.717) 29.9%,
+  hsl(0 0% 0% / 0.683) 34.3%,
+  hsl(0 0% 0% / 0.641) 38.7%,
+  hsl(0 0% 0% / 0.592) 43.3%,
+  hsl(0 0% 0% / 0.534) 48.4%,
+  hsl(0 0% 0% / 0.468) 54.1%,
+  hsl(0 0% 0% / 0.393) 60.6%,
+  hsl(0 0% 0% / 0.31) 68.3%,
+  hsl(0 0% 0% / 0.216) 77.3%,
+  hsl(0 0% 0% / 0.113) 87.7%,
+  hsl(0 0% 0% / 0) 100%
+  );
+  transition: 300ms opacity linear;
+}
+
+.certs::after{
+  background: linear-gradient(65deg, hsl(8 90% 60% / 0.7) 0, hsl(5 90% 60% / 0) 100%);
+  opacity: 0;
+  transition: 300ms opacity linear;
+}
+
+.certs > * {
+  z-index: 10;
+}
+
+.certs img{
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  object-fit: cover;
+  filter: grayscale(3);
+  transition: filter 300ms ease, transform 250ms linear;
+}
+
+
+.certs h2{
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.05ch;
+  transition: 300ms transform ease;
+}
+.certs p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.certs p {
+  opacity: 0;
+  transition: 300ms opacity linear, 300ms transform ease-in-out;
+}
+
+.certs h2,
+.certs p {
+  transform: translateY(2ex);
+}
+
+.certs:focus {
+  outline: 0.5rem solid white;
+  outline-offset: -0.5rem;
+}
+
+.certs:hover :is(h2, p),
+.certs:focus :is(h2, p) {
+  transform: none;
+}
+
+.certs:hover p,
+.certs:focus p {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+.certs:hover::after,
+.certs:focus::after,
+.certs:hover::before,
+.certs:focus::before {
+  opacity: 0.7;
+}
+
+.certs:hover img,
+.certs:focus img {
+  filter: grayscale(0);
+  transform: scale(1.05) rotate(5deg);
+}
